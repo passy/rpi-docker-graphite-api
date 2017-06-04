@@ -10,3 +10,15 @@ whisper:
 carbon:
   hosts:
     - carbon:7002
+logging:
+  version: 1
+  disable_existing_loggers: true
+  handlers:
+    stdout:
+      class: logging.StreamHandler
+  loggers:
+    graphite_api:
+      handlers:
+        - stdout
+      propagate: true
+      level: WARN
